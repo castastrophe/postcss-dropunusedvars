@@ -1,3 +1,10 @@
+# 1.0.0 (2023-04-05)
+
+
+### Features
+
+* init repo ([29c3289](https://github.com/castastrophe/postcss-dropunusedvars/commit/29c3289a4d3bccfac412e62e015c0b8587fb0c45))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
