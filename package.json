@@ -19,21 +19,12 @@
   "files": [
     "index.js"
   ],
-  "engines": {
-    "node": ">=14 <=18"
-  },
   "scripts": {
-    "prepare": "husky install",
-    "test": "ava",
     "coverage": "c8 yarn test",
-    "semantic-release": "semantic-release"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release",
+    "test": "ava"
   },
-  "funding": [
-    {
-      "type": "github",
-      "url": " https://github.com/sponsors/castastrophe"
-    }
-  ],
   "dependencies": {
     "postcss-value-parser": "^4.1.0"
   },
@@ -53,11 +44,32 @@
     "c8": "^7.13.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.23",
     "prettier": "^2.8.7",
     "prettier-package-json": "^2.8.0",
     "semantic-release": "^21.0.1"
   },
+  "keywords": [
+    "css",
+    "custom",
+    "plugin",
+    "postcss",
+    "properties",
+    "transforms"
+  ],
+  "engines": {
+    "node": ">=14 <=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": " https://github.com/sponsors/castastrophe"
+    }
+  ],
   "lint-staged": {
     "*.js": [
       "prettier --write"
@@ -65,17 +77,5 @@
     "package.json": [
       "prettier-package-json --write"
     ]
-  },
-  "keywords": [
-    "transforms",
-    "css",
-    "custom",
-    "plugin",
-    "postcss",
-    "properties"
-  ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }
