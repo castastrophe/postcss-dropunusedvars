@@ -1,23 +1,8 @@
-# [1.1.0](https://github.com/castastrophe/postcss-dropunusedvars/compare/v1.0.0...v1.1.0) (2023-05-02)
-
-
-### Features
-
-* improve parsing caught by test upgrade ([ddd78c0](https://github.com/castastrophe/postcss-dropunusedvars/commit/ddd78c032a67c85560c65b2753515f33dc220404))
-
 <a name="1.2.1"></a>
 
 ## 1.2.1
 
 🗓 2021-09-29 • 📝 [Commits](https://github.com/adobe/spectrum-css/compare/postcss-dropunusedvars@1.2.1-alpha.0...postcss-dropunusedvars@1.2.1)
-
-**Note:** Version bump only for package postcss-dropunusedvars
-
-<a name="1.2.1-alpha.0"></a>
-
-## 1.2.1-alpha.0
-
-🗓 2021-04-27 • 📝 [Commits](https://github.com/adobe/spectrum-css/compare/postcss-dropunusedvars@1.2.0...postcss-dropunusedvars@1.2.1-alpha.0)
 
 **Note:** Version bump only for package postcss-dropunusedvars
 
@@ -39,13 +24,11 @@
 
 <a name="1.1.0"></a>
 
-# 1.1.0
+# [1.1.0](https://github.com/castastrophe/postcss-dropunusedvars/compare/v1.0.0...v1.1.0) (2023-05-02)
 
-🗓 2020-12-04
+### Features
 
-### ✨ Features
-
-- add postcss-dropunusedvars ([85426eb](https://github.com/adobe/spectrum-css/commit/85426eb))
+- improve parsing caught by test upgrade ([ddd78c0](https://github.com/castastrophe/postcss-dropunusedvars/commit/ddd78c032a67c85560c65b2753515f33dc220404))
 
 <a name="1.0.0"></a>
 
