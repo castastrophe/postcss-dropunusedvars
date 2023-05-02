@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/castastrophe/postcss-dropunusedvars/compare/v1.0.0...v1.1.0) (2023-05-02)
+
+
+### Features
+
+* improve parsing caught by test upgrade ([ddd78c0](https://github.com/castastrophe/postcss-dropunusedvars/commit/ddd78c032a67c85560c65b2753515f33dc220404))
+
 <a name="1.2.1"></a>
 
 ## 1.2.1
