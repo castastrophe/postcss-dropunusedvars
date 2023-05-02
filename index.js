@@ -10,12 +10,12 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-const valueParser = require('postcss-value-parser');
+const valueParser = require("postcss-value-parser");
 
 /** @type import('postcss').PluginCreator */
 module.exports = ({ dropRefs = false }) => {
   return {
-    postcssPlugin: 'postcss-dropunusedvars',
+    postcssPlugin: "postcss-dropunusedvars",
     prepare() {
       /**
        * @type Map<string, { definitions: import('postcss').Declaration[], declUsing: import('postcss').Declaration[], propsUsing: string[]}>
@@ -25,7 +25,7 @@ module.exports = ({ dropRefs = false }) => {
       return {
         Declaration(decl, {}) {
           // Check if this declaration is a custom property
-          const isProp = decl.prop.startsWith('--');
+          const isProp = decl.prop.startsWith("--");
           // Check if this declaration uses a custom property
           const usesProp = decl.value.match(/var\(.*?\)/g);
 
@@ -34,42 +34,47 @@ module.exports = ({ dropRefs = false }) => {
 
           // If this is a custom property and it is not referencing any other custom properties, add it to the set and stop processing
           if (isProp) {
-            const propDef = propMetadata.has(decl.prop) ? propMetadata.get(decl.prop) : {
-              decl: [decl],
-              declUsing: [],
-              propsUsing: []
-            };
+            const propDef = propMetadata.has(decl.prop)
+              ? propMetadata.get(decl.prop)
+              : {
+                  decl: [decl],
+                  declUsing: [],
+                  propsUsing: [],
+                };
 
             propMetadata.set(decl.prop, propDef);
 
-            if(!usesProp) return;
+            if (!usesProp) return;
           }
 
           function parseValueForProperties(node) {
-            if (node.type === 'function' && node.value !== 'var') return;
+            if (node.type === "function" && node.value !== "var") return;
             if (!node.nodes) return;
 
             for (const item of node.nodes) {
               // If this is neither a function nor a word, skip it
-              if (['function', 'word'].every(type => item.type !== type)) continue;
+              if (["function", "word"].every((type) => item.type !== type))
+                continue;
 
               // Recurse if the value is a var function?
-              if (item.type === 'function') {
+              if (item.type === "function") {
                 parseValueForProperties(item);
                 continue;
               }
 
               const usedPropName = item.value;
-              if (!usedPropName.startsWith('--')) continue;
+              if (!usedPropName.startsWith("--")) continue;
 
               // Check if this custom property has been defined yet
               // -- if yes, get existing data about this custom property from the map
               // -- if no, create an empty dataset
-              const propDef = propMetadata.has(usedPropName) ? propMetadata.get(usedPropName) : {
-                decl: [],
-                declUsing: [],
-                propsUsing: []
-              };
+              const propDef = propMetadata.has(usedPropName)
+                ? propMetadata.get(usedPropName)
+                : {
+                    decl: [],
+                    declUsing: [],
+                    propsUsing: [],
+                  };
 
               if (isProp) {
                 // If this is a property definition, add it to the list of declarations using this property
@@ -84,7 +89,6 @@ module.exports = ({ dropRefs = false }) => {
 
           // Parse value and get a list of variables used
           valueParser(decl.value).walk(parseValueForProperties);
-
         },
         // Drop unused variable definitions
         /** @type import('postcss').Processors['OnceExit'] */
@@ -102,9 +106,13 @@ module.exports = ({ dropRefs = false }) => {
               else if (declUsing?.length || propsUsing?.length) {
                 // This might be expected b/c it could be an intentionally empty variable
                 // @todo feature to add an allowlist of empty variable prefixes or names?
-                root.warn(result, `The property ${propName} was used but not defined.`, {
-                  word: propName,
-                });
+                root.warn(
+                  result,
+                  `The property ${propName} was used but not defined.`,
+                  {
+                    word: propName,
+                  }
+                );
               }
               // I don't think this should ever happen, a property not defined and not used
               // should not be able to get into the map
@@ -115,7 +123,11 @@ module.exports = ({ dropRefs = false }) => {
             if (declUsing?.length) return false;
 
             if (!propsUsing?.length) {
-              root.warn(result, `The property ${propName} was defined but not used.`, {});
+              root.warn(
+                result,
+                `The property ${propName} was defined but not used.`,
+                {}
+              );
               // Remove the declarations that were not being used
               // decl.forEach(d => d.remove());
               return true;
@@ -125,17 +137,17 @@ module.exports = ({ dropRefs = false }) => {
 
             return propsUsing.reduce((acc, prop) => {
               const propDef = propMetadata.get(prop);
-              if(shouldRemoveProperty([prop, propDef])) {
+              if (shouldRemoveProperty([prop, propDef])) {
                 return true;
               }
               return acc;
             }, false);
           }
 
-          Array.from(propMetadata.entries()).forEach(entry => {
+          Array.from(propMetadata.entries()).forEach((entry) => {
             if (shouldRemoveProperty(entry)) {
-              const [,{ decl }] = entry;
-              decl.forEach(d => d.remove());
+              const [, { decl }] = entry;
+              decl.forEach((d) => d.remove());
             }
           });
         },
