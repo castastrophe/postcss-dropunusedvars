@@ -1,14 +1,39 @@
 {
-  "private": true,
+  "private": false,
   "name": "postcss-dropunusedvars",
   "version": "1.2.1",
   "description": "Remove unused variable definitions",
   "license": "Apache-2.0",
-  "author": "Adobe",
-  "main": "index.js",
-  "scripts": {
-    "test": "ava"
+  "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
+  "contributors": [
+    "Larry Davis <lazdnet@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/castastrophe/postcss-dropunusedvars.git"
   },
+  "bugs": {
+    "url": "https://github.com/castastrophe/postcss-dropunusedvars/issues"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=14 <=18"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "ava",
+    "coverage": "c8 yarn test",
+    "semantic-release": "semantic-release"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": " https://github.com/sponsors/castastrophe"
+    }
+  ],
   "dependencies": {
     "postcss-value-parser": "^4.1.0"
   },
@@ -16,7 +41,41 @@
     "postcss": "^8.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^10.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "ava": "^5.2.0",
-    "postcss": "^8.4.21"
+    "c8": "^7.13.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "prettier-package-json": "^2.8.0",
+    "semantic-release": "^21.0.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier-package-json --write"
+    ]
+  },
+  "keywords": [
+    "transforms",
+    "css",
+    "custom",
+    "plugin",
+    "postcss",
+    "properties"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
