@@ -1,13 +1,33 @@
 # postcss-dropunusedvars
 
-> Remove unused variable definitions
+> Remove or report on unused variable definitions
 
 ## Installation
 
 ```sh
-npm install postcss-dropunusedvars
+yarn add -D postcss-dropunusedvars
+```
+
+Via the command line:
+
+```sh
 postcss -u postcss-dropunusedvars -o dist/index.css src/index.css
 ```
+
+In the postcss config:
+
+```js
+require("postcss-dropunusedvars")({ fix: true })
+```
+
+## Options
+
+### `fix`
+
+Type: `boolean`<br>
+Default: `false`
+
+Remove unused variables from the output or, if false, report on them to the console.
 
 ## Usage
 
