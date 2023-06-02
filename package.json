@@ -1,5 +1,4 @@
 {
-  "private": false,
   "name": "postcss-dropunusedvars",
   "version": "1.2.1",
   "description": "Remove unused variable definitions",
