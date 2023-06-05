@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/castastrophe/postcss-dropunusedvars/compare/v1.2.1...v2.0.0) (2023-06-05)
+
+### BREAKING CHANGES
+
+BREAKING CHANGE: a new fix flag is available in the options object
+to configure if the properties should be removed or just reported.
+
 # [1.2.1](https://github.com/castastrophe/postcss-dropunusedvars/compare/v1.2.0...v1.2.1) (2021-09-29)
 
 **Note:** Version bump only for package postcss-dropunusedvars
