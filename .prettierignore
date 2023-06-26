@@ -1,0 +1,13 @@
+**/node_modules/**
+**/.git
+**/.svn
+**/.hg
+
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*~
+*.swp
+yarn.lock
+.yarn
