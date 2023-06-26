@@ -1,6 +1,6 @@
 {
   "name": "postcss-dropunusedvars",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Remove unused variable definitions",
   "license": "Apache-2.0",
   "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
