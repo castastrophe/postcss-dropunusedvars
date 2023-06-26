@@ -12,6 +12,8 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GH_PAC_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_PAC_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3

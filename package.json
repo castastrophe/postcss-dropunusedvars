@@ -1,79 +1,79 @@
 {
-  "name": "postcss-dropunusedvars",
-  "version": "2.0.0",
-  "description": "Remove unused variable definitions",
-  "license": "Apache-2.0",
-  "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
-  "contributors": [
-    "Larry Davis <lazdnet@gmail.com>"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/castastrophe/postcss-dropunusedvars.git"
-  },
-  "bugs": {
-    "url": "https://github.com/castastrophe/postcss-dropunusedvars/issues"
-  },
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "scripts": {
-    "coverage": "c8 yarn test",
-    "prepare": "husky install",
-    "semantic-release": "semantic-release",
-    "test": "ava"
-  },
-  "dependencies": {
-    "postcss-value-parser": "^4.1.0"
-  },
-  "peerDependencies": {
-    "postcss": "^8.0.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.5.1",
-    "@commitlint/config-conventional": "^17.4.4",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.7",
-    "@semantic-release/npm": "^10.0.2",
-    "@semantic-release/release-notes-generator": "^11.0.2",
-    "ava": "^5.2.0",
-    "c8": "^7.13.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "postcss": "^8.4.23",
-    "prettier": "^2.8.7",
-    "prettier-package-json": "^2.8.0",
-    "semantic-release": "^21.0.2"
-  },
-  "keywords": [
-    "css",
-    "custom",
-    "plugin",
-    "postcss",
-    "properties",
-    "transforms"
-  ],
-  "engines": {
-    "node": ">=14 <=18"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "funding": [
-    {
-      "type": "github",
-      "url": " https://github.com/sponsors/castastrophe"
-    }
-  ],
-  "lint-staged": {
-    "*.js": [
-      "prettier --write"
-    ],
-    "package.json": [
-      "prettier-package-json --write"
-    ]
-  }
+	"name": "postcss-dropunusedvars",
+	"version": "2.0.0",
+	"description": "Remove unused variable definitions",
+	"license": "Apache-2.0",
+	"author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
+	"contributors": [
+		"Larry Davis <lazdnet@gmail.com>"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/castastrophe/postcss-dropunusedvars.git"
+	},
+	"bugs": {
+		"url": "https://github.com/castastrophe/postcss-dropunusedvars/issues"
+	},
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"scripts": {
+		"coverage": "c8 yarn test",
+		"prepare": "sh ./scripts/prepare.sh",
+		"semantic-release": "semantic-release",
+		"test": "ava"
+	},
+	"dependencies": {
+		"postcss-value-parser": "^4.1.0"
+	},
+	"peerDependencies": {
+		"postcss": "^8.0.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.5.1",
+		"@commitlint/config-conventional": "^17.4.4",
+		"@semantic-release/commit-analyzer": "^9.0.2",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^8.0.7",
+		"@semantic-release/npm": "^10.0.2",
+		"@semantic-release/release-notes-generator": "^11.0.2",
+		"ava": "^5.2.0",
+		"c8": "^7.13.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
+		"postcss": "^8.4.23",
+		"prettier": "^2.8.7",
+		"prettier-package-json": "^2.8.0",
+		"semantic-release": "^21.0.2"
+	},
+	"keywords": [
+		"css",
+		"custom",
+		"plugin",
+		"postcss",
+		"properties",
+		"transforms"
+	],
+	"engines": {
+		"node": ">=14 <=18"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"funding": [
+		{
+			"type": "github",
+			"url": " https://github.com/sponsors/castastrophe"
+		}
+	],
+	"lint-staged": {
+		"*.{css,js,md}": [
+			"prettier --write"
+		],
+		"package.json": [
+			"prettier-package-json --write"
+		]
+	}
 }
