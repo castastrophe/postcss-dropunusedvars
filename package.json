@@ -46,7 +46,7 @@
     "postcss": "^8.4.23",
     "prettier": "^3.0.3",
     "prettier-package-json": "^2.8.0",
-    "semantic-release": "^21.0.5"
+    "semantic-release": "^23.0.7"
   },
   "keywords": [
     "css",
